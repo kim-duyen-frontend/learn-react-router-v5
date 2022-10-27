@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/actions';
+import { useHistory } from "react-router-dom";
 import "./styles.scss";
 
 const Login = () => {
@@ -9,6 +10,8 @@ const Login = () => {
         password: "cityslicka"
     });
     const dispatch = useDispatch();
+    const auth = useSelector((state) => state.auth);
+    let history = useHistory();
 
     const handleChangeField = (event, type) => {
         const value = event.target.value;
@@ -20,7 +23,11 @@ const Login = () => {
         dispatch(loginUser(formData));
         // console.log({ ...formData });
     }
-
+    useEffect(() => {
+        if (auth) {
+            history.push("/home");
+        }
+    }, [auth])
     return (
         <div className="login">
             <div className="container">

@@ -1,4 +1,5 @@
-import { myAPI } from "../../utils/callApi"
+import { myAPI } from "../../utils/callApi";
+
 export const loginSuccess = (email, token) => {
     return {
         type: "LOGIN_SUCCESS",

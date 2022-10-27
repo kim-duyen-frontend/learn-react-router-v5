@@ -1,5 +1,6 @@
 const initialState = {
-    email: ""
+    email: "",
+    auth: false
 }
 
 const authUserReducer = (state = initialState, action) => {
@@ -7,7 +8,8 @@ const authUserReducer = (state = initialState, action) => {
         case "LOGIN_SUCCESS":
             return {
                 ...state,
-                email: action.payload.email
+                email: action.payload.email,
+                auth: true
             }
         default:
             return state;
