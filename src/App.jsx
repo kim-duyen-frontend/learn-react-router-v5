@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact={true} path="/" component={Login} />
         <Route path="/home" component={Home} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
