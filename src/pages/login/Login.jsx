@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux/actions';
 import "./styles.scss";
 
 const Login = () => {
@@ -6,7 +8,8 @@ const Login = () => {
         email: "eve.holt@reqres.in",
         password: "cityslicka"
     });
-    
+    const dispatch = useDispatch();
+
     const handleChangeField = (event, type) => {
         const value = event.target.value;
         formData[type] = value;
@@ -14,9 +17,10 @@ const Login = () => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log({ ...formData });
+        dispatch(loginUser(formData));
+        // console.log({ ...formData });
     }
-    
+
     return (
         <div className="login">
             <div className="container">

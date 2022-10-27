@@ -1,0 +1,28 @@
+.accessPage {
+    display: grid;
+    place-content: center;
+    height: calc(100vh - 50px);
+
+    .container {
+        max-width: 500px;
+        height: 300px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border: 1px solid red;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        .text {
+            line-height: 1;
+
+            .note {
+                display: block;
+                text-align: center;
+                padding: 1rem 0;
+            }
+        }
+    }
+}
